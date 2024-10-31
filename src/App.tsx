@@ -2,6 +2,7 @@ import FeaturesSection from "./Components/FeaturesSection";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import IntroSection from "./Components/IntroSection";
+import JsonExamples from "./Components/JsonExamples";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <main>
         <IntroSection />
         <FeaturesSection />
+        <JsonExamples />
       </main>
       <Footer />
     </div>
