@@ -1,19 +1,10 @@
-import FeaturesSection from "./Components/FeaturesSection";
-import Footer from "./Components/Footer";
-import Header from "./Components/Header";
-import IntroSection from "./Components/IntroSection";
-import JsonExamples from "./Components/JsonExamples";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes";
 
 function App() {
   return (
-    <div className="relative min-h-screen">
-      <Header />
-      <main>
-        <IntroSection />
-        <FeaturesSection />
-        <JsonExamples />
-      </main>
-      <Footer />
+    <div>
+      <RouterProvider router={router} />
     </div>
   );
 }

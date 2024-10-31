@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { solarizedDarkAtom } from "react-syntax-highlighter/dist/esm/styles/prism";
 
@@ -22,8 +23,12 @@ function IntroSection() {
             A simple and powerful tool to view and format JSON data
             effortlessly. Explore your JSON data with ease and efficiency.
           </p>
-          <button className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition">
-            Get Started
+          <button className="bg-blue-500 text-white px-6 py-2 mt-8 rounded-md hover:bg-blue-600 transition">
+            <Link
+              to="/editor"
+            >
+              Get Started
+            </Link>
           </button>
         </div>
         <div className="mb-8 md:mt-0 md:w-1/2 w-full flex justify-center">
