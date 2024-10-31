@@ -14,7 +14,7 @@ A minimal, responsive JSON Viewer built with React to view and format JSON data 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/json-viewer.git
+   git clone https://github.com/m-mohammad-d/json-view.git
    ```
 2. Install dependencies and start the app:
    ```bash
