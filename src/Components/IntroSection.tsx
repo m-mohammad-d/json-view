@@ -12,11 +12,13 @@ function IntroSection() {
   const sampleCode = JSON.stringify(sampleData, null, 2);
 
   return (
-    <section className="bg-gray-100 py-12">
-      <div className="max-w-screen-2xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between">
+    <section className="bg-gray-100 py-12 px-4">
+      <div className="max-w-screen-2xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between">
         <div className="md:w-1/2 space-y-4">
-          <h1 className="text-4xl font-bold text-blue-600">JSON Viewer</h1>
-          <p className="text-lg text-gray-700">
+          <h1 className="text-3xl md:text-4xl font-bold text-blue-600">
+            JSON Viewer
+          </h1>
+          <p className="text-base md:text-lg text-gray-700">
             A simple and powerful tool to view and format JSON data
             effortlessly. Explore your JSON data with ease and efficiency.
           </p>
@@ -24,10 +26,16 @@ function IntroSection() {
             Get Started
           </button>
         </div>
-        <div className="mt-8 md:mt-0 md:w-1/2 flex justify-center">
-          <SyntaxHighlighter language="json" style={solarizedDarkAtom}>
-            {sampleCode}
-          </SyntaxHighlighter>
+        <div className="mb-8 md:mt-0 md:w-1/2 w-full flex justify-center">
+          <div className="w-full md:w-auto overflow-auto rounded-lg">
+            <SyntaxHighlighter
+              language="json"
+              style={solarizedDarkAtom}
+              className="rounded-lg"
+            >
+              {sampleCode}
+            </SyntaxHighlighter>
+          </div>
         </div>
       </div>
     </section>
