@@ -1,4 +1,5 @@
 import FeaturesSection from "./Components/FeaturesSection";
+import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import IntroSection from "./Components/IntroSection";
 
@@ -10,6 +11,7 @@ function App() {
         <IntroSection />
         <FeaturesSection />
       </main>
+      <Footer />
     </div>
   );
 }
