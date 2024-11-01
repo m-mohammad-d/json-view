@@ -1,4 +1,3 @@
-// JsonViewer.tsx
 import React, { useState } from "react";
 import parseJson from "../utils/ParseJson";
 
@@ -7,7 +6,7 @@ interface JsonViewerProps {
 }
 
 const JsonViewer: React.FC<JsonViewerProps> = ({ jsonData }) => {
-  const parsedData = parseJson(jsonData);
+  const parsedData: unknown = parseJson(jsonData);
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
   const toggleNode = (key: string) => {
@@ -17,7 +16,7 @@ const JsonViewer: React.FC<JsonViewerProps> = ({ jsonData }) => {
     }));
   };
 
-  const renderJson = (data: any, path = ""): JSX.Element => {
+  const renderJson = (data: unknown, path = ""): React.ReactNode => {
     if (data === null) {
       return <span className="text-gray-500">null</span>;
     }
@@ -57,15 +56,19 @@ const JsonViewer: React.FC<JsonViewerProps> = ({ jsonData }) => {
     } else if (typeof data === "boolean") {
       return <span className="text-purple-500">{data ? "true" : "false"}</span>;
     } else {
-      return <span>{data}</span>;
+      return <span>{String(data)}</span>; 
     }
   };
 
   return (
     <div className="bg-gray-900 p-4 rounded-lg h-screen overflow-y-auto max-h-[100vh] custom-scroll">
       <h2 className="text-xl font-bold text-white">JSON Viewer</h2>
-      {parsedData && parsedData.error ? (
-        <div className="text-red-500 font-bold mt-2">{parsedData.error}</div>
+      {parsedData &&
+      typeof parsedData === "object" &&
+      "error" in (parsedData as { error?: string }) ? (
+        <div className="text-red-500 font-bold mt-2">
+          {(parsedData as { error?: string }).error || "Unknown error"}
+        </div>
       ) : (
         <div className="text-white">{renderJson(parsedData)}</div>
       )}
