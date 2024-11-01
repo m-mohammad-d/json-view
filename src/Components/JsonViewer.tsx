@@ -62,7 +62,7 @@ const JsonViewer: React.FC<JsonViewerProps> = ({ jsonData }) => {
   };
 
   return (
-    <div className="bg-gray-900 p-4 rounded-lg overflow-y-auto max-h-[100vh] custom-scroll">
+    <div className="bg-gray-900 p-4 rounded-lg h-screen overflow-y-auto max-h-[100vh] custom-scroll">
       <h2 className="text-xl font-bold text-white">JSON Viewer</h2>
       {parsedData && parsedData.error ? (
         <div className="text-red-500 font-bold mt-2">{parsedData.error}</div>
