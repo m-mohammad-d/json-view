@@ -28,4 +28,6 @@ A minimal, responsive JSON Viewer built with React to view and format JSON data 
 
 Load your JSON data, view examples, and explore JSON with ease. This project is designed to be as simple and useful as possible, especially for quick data checks and JSON formatting.
 
+https://view-json.netlify.app
+
 Enjoy JSON viewing! 🥂
